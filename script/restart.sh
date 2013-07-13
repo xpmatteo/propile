@@ -11,9 +11,6 @@ ssh $user@$host <<EOF
 	set -e
 	cd propile
 	set -x
-	git pull
 	cat tmp/pids/server.pid | xargs kill -9 || true
-	bundle exec rake db:migrate
-#	bundle exec rake assets:precompile
 	rails server --daemon
 EOF
