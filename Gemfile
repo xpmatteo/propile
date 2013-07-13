@@ -12,7 +12,7 @@ gem 'sqlite3'
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'prawn'
 gem 'htmlentities'
- 
+gem 'thin' 
 
 group :test do
   gem 'ZenTest'
