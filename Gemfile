@@ -47,6 +47,7 @@ end
 gem 'jquery-rails'
 gem 'bcrypt-ruby'
 
+gem 'nokogiri', '1.6.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
