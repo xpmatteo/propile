@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+PropileConfig.create! name: "voting_active", value: "false"
+PropileConfig.create! name: "submit_session_active", value: "true"
