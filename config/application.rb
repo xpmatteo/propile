@@ -78,7 +78,7 @@ module Propile
     end
 
     def self.version
-      File.readlines('VERSION').first.strip[/[^\s]*/]
+      File.readlines("#{Rails.root}/VERSION").first.strip[/[^\s]*/]
     end
   end
 
