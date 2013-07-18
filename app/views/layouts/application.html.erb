@@ -12,7 +12,7 @@
   <body>
     <div class="menu">
       <nav id="header-navigation">
-        <%= image_tag "iad120_2013.png" %>
+        <a href="http://agileday.it/"><%= image_tag "iad120_2013.png" %></a>
         <% if signed_in? %>
           <%= "Signed in as" %>&nbsp;<%= link_to current_account.email , current_account.presenter %>
           <%= current_account.maintainer? ? "(maintainer)" : "" %>
