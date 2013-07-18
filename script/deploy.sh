@@ -8,13 +8,13 @@ user=matteo
 
 ssh $user@$host <<EOF
 	set -e
-	set -x
 	export RAILS_ENV=production
 	cd propile
+	set -x
 	git pull
-	bundle install
+	bundle install --deployment
 	bundle exec rake assets:precompile
-	cat tmp/pids/server.pid | xargs kill -9 || true
+	sudo -i bash -c 'cd /home/matteo/propile; bundle exec thin stop' || true
 	bundle exec rake db:migrate
-	rails server --daemon
+	sudo -i bash -c 'cd /home/matteo/propile; bundle exec thin start -p 80 -d'
 EOF

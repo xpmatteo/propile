@@ -1,6 +1,6 @@
 class Notifications < ActionMailer::Base
  
-  FromAddress = "sessions@agileday.it"
+  FromAddress = "iad-sessions@googlegroups.com"
   default from: FromAddress
   helper :application
 
