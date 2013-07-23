@@ -39,5 +39,9 @@ class Account < ActiveRecord::Base
     return '/account/password/edit' if !confirmed? || reset?
     return '/presenters/dashboard'
   end
+  
+  def Account.find_by_email(email)
+    Account.where("lower(email) = ?", email.downcase).first
+  end
 
 end

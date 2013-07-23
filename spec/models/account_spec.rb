@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Account do
-  describe 'role acessors' do
+  describe 'role accessors' do
     it 'is maintainer when the role is maintainer' do
       Account.new(role: Account::Maintainer).should be_maintainer
     end
@@ -57,6 +57,7 @@ describe Account do
         Account.authenticate_by_token(account.authentication_token).should == account
       end
     end
+    
     describe 'on password' do
       before { account.confirm_with_password :password => 'secret', :password_confirmation => 'secret' }
       it "fails when password does not match" do
@@ -102,6 +103,13 @@ describe Account do
     end
   end
 
+  describe 'can be found by case-insensitive email' do
+    email = "Foo@bar.com"
+    account = FactoryGirl.create(:presenter_account, :email => email)
+    Account.find_by_email(email).should == account
+    Account.find_by_email(email.downcase).should == account
+    Account.find_by_email(email.upcase).should == account
+  end
 
   describe 'reset!' do
     def reset_account
