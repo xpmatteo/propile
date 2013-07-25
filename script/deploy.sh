@@ -12,7 +12,7 @@ ssh $user@$host <<EOF
 	cd propile
 	set -x
 	git pull
-	bundle install --deployment
+	bundle install --deployment --quiet
 	bundle exec rake assets:precompile
 	sudo -i bash -c 'cd /home/matteo/propile; bundle exec thin stop' || true
 	bundle exec rake db:migrate
