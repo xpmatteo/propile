@@ -8,7 +8,7 @@ user=matteo
 
 ssh $user@$host <<EOF
 	set -e
-	export RAILS_ENV=production
+	source .propile_config
 	cd propile
 	set -x
 	git pull

@@ -52,6 +52,15 @@ Propile::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { :host => 'sessions.agileday.it' }
   config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'example.com',
+    user_name:            "italian.agile.day@gmail.com",
+    password:             ENV["SMTP_PASSWORD"],
+    authentication:       'plain',
+    enable_starttls_auto: true  
+  }
 
   # Enable threaded mode
   # config.threadsafe!
@@ -67,3 +76,5 @@ Propile::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
+
+ActionMailer::Base
