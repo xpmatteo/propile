@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.15'
 gem "haml-rails"
 #gem "markitup_rails" 
 # Bundle edge Rails instead:
